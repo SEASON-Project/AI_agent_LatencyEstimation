@@ -16,5 +16,6 @@ Example:
 
 chat4$chat("Can you calculate the 0.8 latency percentile for two links in series, the first one operates at 100 Gbps link loaded with 8 Gbps, while the second one operates at 400G and is loaded with 210 Gbps? Calculate the two latency values separately")
 
-The model then returns: 
+The AI Agent (based on Gemini-2.5 Flash) then returns: 
 
+Agent:> The 0.8 latency percentile for the first link is 3.082e-07 microsecs, and for the second link, it is 1.1596e-07 microsecs.
