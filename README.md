@@ -14,3 +14,7 @@ As shown, you can interface the Agent using natural language and the Agent finds
 
 Example: 
 
+chat4$chat("Can you calculate the 0.8 latency percentile for two links in series, the first one operates at 100 Gbps link loaded with 8 Gbps, while the second one operates at 400G and is loaded with 210 Gbps? Calculate the two latency values separately")
+
+The model then returns: 
+
