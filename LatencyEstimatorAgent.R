@@ -9,24 +9,11 @@ library(dplyr)
 
 rm(list=ls())
 
-setwd( "/Users/jahgutie/Google Drive/Research/Rexperiments/")
 
-# Few examples:
-gemini_chat("Write me a joke")
-gemini("who are you")
-
-gemini_chat("Tell me three jokes about statisticians")
-
-
-
-#text <- pdf_text("2010.pdf")
 
 # Models available: 
 list_models = models_google_gemini()
 gemma_model = list_models[[1]][grep("gemma",list_models[[1]])[5]]
-
-# https://ellmer.tidyverse.org/articles/structured-data.html
-
 
 
 
@@ -44,7 +31,7 @@ get_latency <- tool(
   },
   name = "get_latency",
   description = "
-    This is a function that gives you a maximum delay percentile for a link operating at bitrate gbps fed with traffic gbps
+    This is a function that gives you a maximum delay percentile for a link operating at a bitrate of Gbps fed with traffic of Gbps
   ",
   arguments = list(
     bitrate = type_array(type_number("in Gbps"), "maximum bitrate of the link in Gbps"),
@@ -55,11 +42,11 @@ get_latency <- tool(
 
 
 
-prompt_calculate_percentile = "You are a network specialist that needs to calculate latency percentiles based on an equation that 
-      takes as input the link's maximum bitrate and the traffic offered to the link, both in Gbps. Such offered traffic must be smaller
-      than the maximum bitrate. Also the percentile required needs to be provided (which is a number between 0 and 1), 
-      for example 0.9 for the 90th percentile or 0.99 for the 99th percentile. 
-      With that information, you need to calculate the maximum delay percentile for that link. Use microsecs as output units"
+prompt_calculate_percentile = "You are a network specialist who needs to calculate latency percentiles based on an equation that 
+      inputs the link's maximum bitrate and the traffic offered to the link, both in Gbps. Such offered traffic must be smaller
+      than the maximum bitrate. Also, the percentile required needs to be provided (which is a number between 0 and 1), 
+      for example, 0.9 for the 90th percentile or 0.99 for the 99th percentile. 
+      With that information, calculate the maximum delay percentile for that link. Use microsecs as output units."
 
 
 chat4 <- chat_google_gemini(
