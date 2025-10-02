@@ -11,10 +11,6 @@ rm(list=ls())
 
 setwd( "/Users/jahgutie/Google Drive/Research/Rexperiments/")
 
-
-# Google API
-setAPI("AIzaSyDo7k-ulflGzObFP-6j-KUSnovG0p4O4rU")
-
 # Few examples:
 gemini_chat("Write me a joke")
 gemini("who are you")
@@ -73,7 +69,7 @@ chat4 <- chat_google_gemini(
   model = "gemini-2.5-flash", # "gpt-oss-20b", #  "gemini-2.5-flash"
   #  max_tokens = 1000,
   params = params(temperature = 1.2, top_p = NULL, top_k = NULL, max_tokens = 1000),
-  api_key = c("AIzaSyDo7k-ulflGzObFP-6j-KUSnovG0p4O4rU")
+  api_key = c("AIz...") # YOUR GOOGLE API HERE
 )
 
 chat4$register_tool(get_latency)
