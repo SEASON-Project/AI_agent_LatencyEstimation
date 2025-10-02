@@ -1,4 +1,5 @@
 
+
 library(tidyverse)
 library(gemini.R)
 library(ellmer)
@@ -7,6 +8,30 @@ library(pdftools)
 library(dplyr)
 
 rm(list=ls())
+
+setwd( "/Users/jahgutie/Google Drive/Research/Rexperiments/")
+
+
+# Google API
+setAPI("AIzaSyDo7k-ulflGzObFP-6j-KUSnovG0p4O4rU")
+
+# Few examples:
+gemini_chat("Write me a joke")
+gemini("who are you")
+
+gemini_chat("Tell me three jokes about statisticians")
+
+
+
+#text <- pdf_text("2010.pdf")
+
+# Models available: 
+list_models = models_google_gemini()
+gemma_model = list_models[[1]][grep("gemma",list_models[[1]])[5]]
+
+# https://ellmer.tidyverse.org/articles/structured-data.html
+
+
 
 
 #===============================================================================
@@ -19,7 +44,7 @@ get_latency <- tool(
     load_env = 0.5 + 0.16*load + 0.34*load^2
     EX = 8*1161/(bitrate*1e9)
     latency = EX * (1/(1-load_env)) * log (1/(1-percentile))
-    return(latency)
+    return(latency*1e6)
   },
   name = "get_latency",
   description = "
@@ -48,7 +73,7 @@ chat4 <- chat_google_gemini(
   model = "gemini-2.5-flash", # "gpt-oss-20b", #  "gemini-2.5-flash"
   #  max_tokens = 1000,
   params = params(temperature = 1.2, top_p = NULL, top_k = NULL, max_tokens = 1000),
-  api_key = c("YOUR_GOOGLE_API_KEY_HERE") # or any other API key if you want to use other models
+  api_key = c("AIzaSyDo7k-ulflGzObFP-6j-KUSnovG0p4O4rU")
 )
 
 chat4$register_tool(get_latency)
