@@ -50,9 +50,7 @@ prompt_calculate_percentile = "You are a network specialist who needs to calcula
 
 
 chat4 <- chat_google_gemini(
-  #system_prompt = "You are a research assistant who specializes in extracting structured data from scientific papers.",
   system_prompt = prompt_calculate_percentile,
-  #  name = "roll_die_agent",
   model = "gemini-2.5-flash", # "gpt-oss-20b", #  "gemini-2.5-flash"
   #  max_tokens = 1000,
   params = params(temperature = 1.2, top_p = NULL, top_k = NULL, max_tokens = 1000),
