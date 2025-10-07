@@ -20,4 +20,4 @@ chat4$chat("Can you calculate the 0.8 latency percentile for two links in series
 
 The AI Agent (based on Gemini-2.5 Flash) then returns: 
 
-Agent:> The 0.8 latency percentile for the first link is 3.082e-07 microsecs, and for the second link, it is 1.1596e-07 microsecs.
+Agent:> The 0.8 latency percentile for the first link is 0.3082 microsecs, and for the second link, it is 0.11596 microsecs.
