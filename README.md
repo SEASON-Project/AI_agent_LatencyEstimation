@@ -1,5 +1,7 @@
 # AI Agent for estimating upper bounds on Latency percentiles
 By José Alberto Hernández, Universidad Carlos III de Madrid, Oct 2025.
+ACK: “Part of this development has been supported by the SNS SEASON Project (G.A: 101096120) https://www.season-project.eu/”
+
 
 This repository provides a practical example for applying the latency envelope methodology of article: 
 
